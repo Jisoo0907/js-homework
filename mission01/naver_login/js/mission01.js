@@ -4,21 +4,25 @@
 
 /* 1. 객체와 키를 인수로 받아, 객체에 해당 키가 존재하면 그 키에 해당하는 값을 반환하고, 
 존재하지 않으면 에러를 발생시키는 함수를 작성하세요.  */
-
-function getValueAtObject(obj, key) {
-  // 코드를 작성하세요
-}
-
-/* const person = {
-  name: 'Alice',
+const person = {
+  name: "Alice",
   age: 25,
-  city: 'Wonderland'
+  city: "Wonderland",
 };
 
-console.log(getValueAtObject(person, 'name')); // 'Alice'
-console.log(getValueAtObject(person, 'age'));  // 25
-console.log(getValueAtObject(person, 'city')); // 'Wonderland'
-console.log(getValueAtObject(person, 'country')); // Error ! */
+function getValueAtObject(obj, key) {
+  let keyValue = obj[key];
+  if (keyValue) {
+    return keyValue;
+  } else {
+    throw new Error("해당 키가 존재하지 않습니다.");
+  }
+}
+
+console.log(getValueAtObject(person, "name")); // 'Alice'
+console.log(getValueAtObject(person, "age")); // 25
+console.log(getValueAtObject(person, "city")); // 'Wonderland'
+console.log(getValueAtObject(person, "country")); // Error !
 
 /* 2. 배열과 인덱스를 인수로 받아, 인덱스가 배열의 유효한 범위 내에 있으면 그 인덱스에 
 해당하는 값을 반환하고, 유효하지 않은 인덱스일 경우 에러 메시지를 반환하는 함수를 
