@@ -11,33 +11,39 @@ const person = {
 };
 
 function getValueAtObject(obj, key) {
-  let keyValue = obj[key];
+  let keyValue = Object.prototype.hasOwnProperty.call(obj, key);
+
   if (keyValue) {
-    return keyValue;
+    return obj[key];
   } else {
-    throw new Error("해당 키가 존재하지 않습니다.");
+    throw new Error("getValueAtObject() : 해당 키가 존재하지 않습니다.");
   }
 }
 
-console.log(getValueAtObject(person, "name")); // 'Alice'
+/* console.log(getValueAtObject(person, "name")); // 'Alice'
 console.log(getValueAtObject(person, "age")); // 25
 console.log(getValueAtObject(person, "city")); // 'Wonderland'
-console.log(getValueAtObject(person, "country")); // Error !
+console.log(getValueAtObject(person, "country")); // Error ! */
 
 /* 2. 배열과 인덱스를 인수로 받아, 인덱스가 배열의 유효한 범위 내에 있으면 그 인덱스에 
 해당하는 값을 반환하고, 유효하지 않은 인덱스일 경우 에러 메시지를 반환하는 함수를 
 작성하세요. */
+const numbers = [10, 20, 30, 40, 50];
 
 function getNumberAtArray(arr, index) {
-  // 코드를 작성하세요
+  if (Array.isArray(arr)) {
+    // 배열 유무 검사
+    if (index >= 0 && index <= arr.length - 1) {
+      // 유효한 인덱스인지 검사
+      return arr[index];
+    } else throw new Error("getNumberAtArray() : 유효하지 않은 인덱스입니다.");
+  } else throw new Error("getNumberAtArray() : 배열이 아닙니다.");
 }
-
-/* const numbers = [10, 20, 30, 40, 50];
 
 console.log(getNumberAtArray(numbers, 2)); // 30
 console.log(getNumberAtArray(numbers, 4)); // 50
 console.log(getNumberAtArray(numbers, 5)); // Error!
-console.log(getNumberAtArray(numbers, -1)); // Error! */
+console.log(getNumberAtArray(numbers, -1)); // Error!
 
 /* 추가 설명
 
