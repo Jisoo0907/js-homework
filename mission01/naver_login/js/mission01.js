@@ -20,10 +20,10 @@ function getValueAtObject(obj, key) {
   }
 }
 
-/* console.log(getValueAtObject(person, "name")); // 'Alice'
+console.log(getValueAtObject(person, "name")); // 'Alice'
 console.log(getValueAtObject(person, "age")); // 25
 console.log(getValueAtObject(person, "city")); // 'Wonderland'
-console.log(getValueAtObject(person, "country")); // Error ! */
+console.log(getValueAtObject(person, "country")); // Error !
 
 /* 2. 배열과 인덱스를 인수로 받아, 인덱스가 배열의 유효한 범위 내에 있으면 그 인덱스에 
 해당하는 값을 반환하고, 유효하지 않은 인덱스일 경우 에러 메시지를 반환하는 함수를 
