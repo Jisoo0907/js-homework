@@ -57,21 +57,30 @@ window.location.href = "welcome.html";
 ##### 작성한 코드
 
 ```javascript
-loginButton.addEventListener("submit", () => {
-  if (emailInput.value !== "" && pwInput.value !== "") {
-    if (emailInput.value !== user.id) {
-      alert("아이디가 일치하지 않습니다!");
-    } else if (pwInput.value !== user.pw) {
-      alert("비밀번호가 일치하지 않습니다!");
-    } else if (emailInput.value === user.id && pwInput.value === user.pw) {
-      window.location.href = "welcome.html";
-    }
-  } else {
-    alert("아이디와 비밀번호를 입력하세요!");
+function userValidation(userId, userPw) {
+  if (userId.value === user.id && userPw.value === user.pw) {
+    window.location.href = "welcome.html";
+  } else if (userId.value !== user.id || userPw.value !== user.pw) {
+    alert("아이디 혹은 비밀번호가 일치하지 않습니다!");
   }
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  userValidation(emailInput, pwInput);
 });
 ```
 
 #### 문제점
 
 - 로그인 버튼 클릭 시 HTTP ERROR 405가 뜸
+
+##### 시도해 본 것
+
+- 아이디와 비밀번호 검증하는 코드를 함수로 만듦
+- preventDefault()를 추가함
+- 로그인 버튼에 이벤트 리스너 추가했던 것을 form에 추가하는 것으로 변경함
+
+##### 하지 못한 것
+
+- 상태 변수 관리

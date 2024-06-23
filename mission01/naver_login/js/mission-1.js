@@ -23,7 +23,6 @@ function pwReg(text) {
 const form = document.querySelector("form");
 const emailInput = document.querySelector(".user-email-input");
 const pwInput = document.querySelector(".user-password-input");
-const loginButton = document.querySelector(".btn-login");
 
 /* 1 */
 emailInput.addEventListener("input", () => {
@@ -43,16 +42,15 @@ pwInput.addEventListener("input", () => {
 });
 
 /* 3, 4, 5 */
-loginButton.addEventListener("submit", () => {
-  if (emailInput.value !== "" && pwInput.value !== "") {
-    if (emailInput.value !== user.id) {
-      alert("아이디가 일치하지 않습니다!");
-    } else if (pwInput.value !== user.pw) {
-      alert("비밀번호가 일치하지 않습니다!");
-    } else if (emailInput.value === user.id && pwInput.value === user.pw) {
-      window.location.href = "welcome.html";
-    }
-  } else {
-    alert("아이디와 비밀번호를 입력하세요!");
+function userValidation(userId, userPw) {
+  if (userId.value === user.id && userPw.value === user.pw) {
+    window.location.href = "welcome.html";
+  } else if (userId.value !== user.id || userPw.value !== user.pw) {
+    alert("아이디 혹은 비밀번호가 일치하지 않습니다!");
   }
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  userValidation(emailInput, pwInput);
 });
