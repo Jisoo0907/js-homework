@@ -17,4 +17,5 @@ JavaScript 과제
 
 ### Mission-2
 
-[mission2 README 바로가기](./mission02/README.md)
+[mission2 README 바로가기](./mission02/README.md) </br>
+[mission2.js 바로가기](./mission02/client/js/main.js)
