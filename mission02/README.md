@@ -1,4 +1,4 @@
-bbㅠ# Mission-2 과제
+# Mission-2 과제
 
 ---
 
@@ -12,7 +12,7 @@ bbㅠ# Mission-2 과제
 
 ---
 
-#### 1. 이벤트 처리 방식 사용하여 클릭 이벤트 활성화
+### 1. 이벤트 처리 방식 사용하여 클릭 이벤트 활성화
 
 > 이벤트 위임</br>
 > 반복문
@@ -39,7 +39,7 @@ nav.addEventListener("click", handleClick);
 - forEach를 사용해 클릭된 li 요소에 'is-active' 클래스 제거/추가
   </br>
 
-#### 2. 배경 색상 및 메인 비주얼 이미지 변경
+### 2. 배경 색상 및 메인 비주얼 이미지 변경
 
 ```javascript
 const visualImg = document.querySelector(".visual img");
@@ -80,7 +80,7 @@ function setImage(image, index) {
 - 배경 색상 변경과 이미지 변경을 함수로 작성
 - data.js의 color 속성과 name 속성 활용
 
-#### 3. 비주얼 변경 시 상단의 이름도 변경
+### 3. 비주얼 변경 시 상단의 이름도 변경
 
 ```javascript
 const h1 = document.querySelector("h1");
@@ -112,7 +112,7 @@ function setNameText(target, index) {
 
 - h1 태그 선택 후 해당 요소의 내용을 data의 name 속성에 해당하는 이름으로 변경
 
-#### 4. 함수 분리
+### 4. 함수 분리
 
 - 처음 코드 작성 시 하나의 함수에 넣음
 
@@ -175,6 +175,6 @@ function setNameText(target, index) {
 
 ---
 
-#### 결과 화면
+## 결과 화면
 
 ![엘리멘탈](https://github.com/Jisoo0907/js-homework/assets/102653945/da11bae1-a5d1-41be-8080-0c16c7b5cd9a)
