@@ -9,6 +9,7 @@
 const nav = document.querySelector(".nav");
 const visualImg = document.querySelector(".visual img");
 const body = document.body;
+const h1 = document.querySelector("h1");
 
 function handleClick(e) {
   e.preventDefault();
@@ -16,7 +17,6 @@ function handleClick(e) {
 
   if (!target) return;
 
-  const h1 = document.querySelector("h1");
   const index = target.dataset.index;
   const children = document.querySelectorAll(".nav li");
 
@@ -32,9 +32,9 @@ function handleClick(e) {
 
 /* 배경 색상 변경 */
 function setBgColor(target, index) {
-  target.style.background = `linear-gradient(to bottom, ${
-    data[index - 1].color[0]
-  }, ${data[index - 1].color[1]}`;
+  const colorA = data[index - 1].color[0];
+  const colorB = data[index - 1].color[1] || "#000";
+  target.style.background = `linear-gradient(to bottom, ${colorA}, ${colorB}`;
 }
 
 /* 이미지 변경 */
@@ -43,7 +43,7 @@ function setImage(image, index) {
   image.alt = data[index - 1].alt;
 }
 
-/* 이름 변경 */
+/* 텍스트 변경 */
 function setNameText(target, index) {
   target.textContent = `${data[index - 1].name}`;
 }
